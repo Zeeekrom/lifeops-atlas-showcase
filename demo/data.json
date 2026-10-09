@@ -7,14 +7,14 @@
     { "label": "newSignals", "value": 7, "detail": "last 24 hours" }
   ],
   "agenda": [
-    { "time": "9:00 AM", "title": "Product design workshop", "location": "Innovation Hub", "kind": "work", "state": "confirmed", "source": "Calendar adapter", "observed": "08:42 AM" },
+    { "time": "9:00 AM", "title": "Client discovery workshop", "location": "Client office", "kind": "work", "state": "confirmed", "source": "Calendar adapter", "observed": "08:42 AM" },
     { "time": "12:30 PM", "title": "Coffee chat with Jordan", "location": "Harbour café", "kind": "network", "state": "confirmed", "source": "Calendar adapter", "observed": "08:42 AM" },
-    { "time": "4:00 PM", "title": "Review graduate program shortlist", "location": "Focus block", "kind": "personal", "state": "planned", "source": "Atlas action", "observed": "Yesterday" },
-    { "time": "Tomorrow", "title": "Technology community meetup", "location": "City venue", "kind": "network", "state": "registered", "source": "Verified event source", "observed": "Yesterday" }
+    { "time": "4:00 PM", "title": "Prepare proposal for new client", "location": "Focus block", "kind": "work", "state": "planned", "source": "Atlas action", "observed": "Yesterday" },
+    { "time": "Tomorrow", "title": "Local business network meetup", "location": "City venue", "kind": "network", "state": "registered", "source": "Verified event source", "observed": "Yesterday" }
   ],
   "actions": [
     { "priority": "high", "title": "Send follow-up after coffee chat", "due": "Today", "state": "active", "source": "User-confirmed action", "updated": "08:20 AM" },
-    { "priority": "medium", "title": "Tailor résumé for analyst role", "due": "Tomorrow", "state": "planned", "source": "Career workflow", "updated": "Yesterday" },
+    { "priority": "medium", "title": "Send proposal to new lead", "due": "Tomorrow", "state": "planned", "source": "Opportunity workflow", "updated": "Yesterday" },
     { "priority": "medium", "title": "Confirm meetup transport", "due": "Tomorrow", "state": "waiting", "source": "Calendar reconciliation", "updated": "Yesterday" }
   ],
   "radarKpis": [
@@ -27,7 +27,7 @@
     { "key": "A", "title": "Goals & timeline", "count": 3, "detail": "Deadlines and milestone changes" },
     { "key": "B", "title": "Events & networking", "count": 6, "detail": "Local events and follow-up signals" },
     { "key": "C", "title": "Actions & follow-up", "count": 4, "detail": "Due work and waiting replies" },
-    { "key": "D", "title": "Career & organisations", "count": 5, "detail": "Roles, companies and people" }
+    { "key": "D", "title": "Opportunities & organisations", "count": 5, "detail": "Leads, companies and people" }
   ],
   "coverage": [
     { "name": "Calendar", "percent": 100, "state": "verified" },
@@ -48,8 +48,8 @@
     { "name": "Follow-up due", "count": 8 }
   ],
   "people": [
-    { "name": "Jordan Lee", "channel": "LinkedIn", "summary": "Discussed local product teams and entry pathways.", "state": "active", "source": "User-confirmed interaction", "time": "Yesterday" },
-    { "name": "Maya Patel", "channel": "Email", "summary": "Shared the next community event registration link.", "state": "connected", "source": "Imported evidence", "time": "2 days ago" },
+    { "name": "Jordan Lee", "channel": "LinkedIn", "summary": "Discussed a possible referral partnership.", "state": "active", "source": "User-confirmed interaction", "time": "Yesterday" },
+    { "name": "Maya Patel", "channel": "Email", "summary": "Shared the registration link for the next network event.", "state": "connected", "source": "Imported evidence", "time": "2 days ago" },
     { "name": "Alex Morgan", "channel": "In person", "summary": "Follow-up requested after the workshop.", "state": "waiting", "source": "Calendar note", "time": "4 days ago" }
   ],
   "qualityKpis": [
