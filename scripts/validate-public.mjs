@@ -38,7 +38,7 @@ for (const path of files) {
   for (const rule of blockedContent) if (rule.pattern.test(content)) failures.push(`${name}: ${rule.name}`);
 }
 
-for (const required of ["README.md", "demo/index.html", "demo/data.json", "docs/publication-boundary.md"]) {
+for (const required of ["README.md", "README.zh-CN.md", "demo/index.html", "demo/data.json", "docs/publication-boundary.md"]) {
   if (!files.some((path) => relative(root, path).replaceAll("\\", "/") === required)) failures.push(`${required}: required file missing`);
 }
 

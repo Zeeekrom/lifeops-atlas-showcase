@@ -1,5 +1,7 @@
 # LifeOps Atlas
 
+<p align="right"><strong>English</strong> · <a href="README.zh-CN.md">简体中文</a></p>
+
 > A privacy-safe engineering showcase of a personal operations platform that
 > turns fragmented schedules, tasks, relationships and opportunity signals into
 > an auditable daily decision system.
@@ -18,6 +20,39 @@ This repository is a deliberately sanitised portfolio edition. It contains a
 runnable synthetic-data demo and the core architectural decisions, but no
 personal data, production prompts, credentials, provider identifiers or
 private deployment configuration.
+
+## Real-world operating snapshot
+
+<table>
+  <tr>
+    <td align="center"><strong>22+ days</strong><br><sub>Shadow operation since 16 Sep 2026</sub></td>
+    <td align="center"><strong>245</strong><br><sub>Canonical people</sub></td>
+    <td align="center"><strong>95</strong><br><sub>Interactions reconciled</sub></td>
+    <td align="center"><strong>108</strong><br><sub>Opportunities tracked</sub></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>91</strong><br><sub>Upcoming events</sub></td>
+    <td align="center"><strong>194</strong><br><sub>Deduplicated radar findings</sub></td>
+    <td align="center"><strong>19</strong><br><sub>Reports delivered</sub></td>
+    <td align="center"><strong>10</strong><br><sub>Ambiguous identities surfaced for review</sub></td>
+  </tr>
+</table>
+
+Verified operational outcomes:
+
+- The latest mirror check reconciled all 16 expected source tabs with zero
+  failed tabs.
+- The radar retained 194 structured, deduplicated findings instead of leaving
+  discoveries only inside transient chat responses.
+- Ten ambiguous identity records were held for explicit review rather than
+  silently merged or treated as new people.
+- Nineteen structured reports reached the notification lane while preserving
+  delivery status for later audit.
+
+_Snapshot captured 8 Oct 2026. These are manually published, selected
+aggregates; this public repository has no live connection to the private
+production database. The figures describe operating scale and verifiable
+system behaviour, not guaranteed career or personal outcomes._
 
 ## What the system demonstrates
 
