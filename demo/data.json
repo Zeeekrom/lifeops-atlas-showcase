@@ -1,0 +1,65 @@
+{
+  "synthetic": true,
+  "todayKpis": [
+    { "label": "events", "value": 4, "detail": "2 confirmed" },
+    { "label": "openActions", "value": 12, "detail": "3 high priority" },
+    { "label": "waitingReplies", "value": 5, "detail": "oldest: 4 days" },
+    { "label": "newSignals", "value": 7, "detail": "last 24 hours" }
+  ],
+  "agenda": [
+    { "time": "9:00 AM", "title": "Product design workshop", "location": "Innovation Hub", "kind": "work", "state": "confirmed", "source": "Calendar adapter", "observed": "08:42 AM" },
+    { "time": "12:30 PM", "title": "Coffee chat with Jordan", "location": "Harbour café", "kind": "network", "state": "confirmed", "source": "Calendar adapter", "observed": "08:42 AM" },
+    { "time": "4:00 PM", "title": "Review graduate program shortlist", "location": "Focus block", "kind": "personal", "state": "planned", "source": "Atlas action", "observed": "Yesterday" },
+    { "time": "Tomorrow", "title": "Technology community meetup", "location": "City venue", "kind": "network", "state": "registered", "source": "Verified event source", "observed": "Yesterday" }
+  ],
+  "actions": [
+    { "priority": "high", "title": "Send follow-up after coffee chat", "due": "Today", "state": "active", "source": "User-confirmed action", "updated": "08:20 AM" },
+    { "priority": "medium", "title": "Tailor résumé for analyst role", "due": "Tomorrow", "state": "planned", "source": "Career workflow", "updated": "Yesterday" },
+    { "priority": "medium", "title": "Confirm meetup transport", "due": "Tomorrow", "state": "waiting", "source": "Calendar reconciliation", "updated": "Yesterday" }
+  ],
+  "radarKpis": [
+    { "label": "discoveries", "value": 18, "detail": "7 new" },
+    { "label": "sourcesChecked", "value": 12, "detail": "11 successful" },
+    { "label": "duplicatesBlocked", "value": 9, "detail": "stable identities" },
+    { "label": "needsReview", "value": 3, "detail": "not auto-applied" }
+  ],
+  "modules": [
+    { "key": "A", "title": "Goals & timeline", "count": 3, "detail": "Deadlines and milestone changes" },
+    { "key": "B", "title": "Events & networking", "count": 6, "detail": "Local events and follow-up signals" },
+    { "key": "C", "title": "Actions & follow-up", "count": 4, "detail": "Due work and waiting replies" },
+    { "key": "D", "title": "Career & organisations", "count": 5, "detail": "Roles, companies and people" }
+  ],
+  "coverage": [
+    { "name": "Calendar", "percent": 100, "state": "verified" },
+    { "name": "Opportunity boards", "percent": 92, "state": "verified" },
+    { "name": "Community events", "percent": 84, "state": "partial" },
+    { "name": "Organisation sites", "percent": 100, "state": "verified" }
+  ],
+  "networkKpis": [
+    { "label": "people", "value": 64, "detail": "canonical profiles" },
+    { "label": "activeConversations", "value": 11, "detail": "last 14 days" },
+    { "label": "followUps", "value": 6, "detail": "2 due today" },
+    { "label": "reviewQueue", "value": 2, "detail": "identity checks" }
+  ],
+  "stages": [
+    { "name": "Connected", "count": 28 },
+    { "name": "Active conversation", "count": 16 },
+    { "name": "Waiting for reply", "count": 12 },
+    { "name": "Follow-up due", "count": 8 }
+  ],
+  "people": [
+    { "name": "Jordan Lee", "channel": "LinkedIn", "summary": "Discussed local product teams and entry pathways.", "state": "active", "source": "User-confirmed interaction", "time": "Yesterday" },
+    { "name": "Maya Patel", "channel": "Email", "summary": "Shared the next community event registration link.", "state": "connected", "source": "Imported evidence", "time": "2 days ago" },
+    { "name": "Alex Morgan", "channel": "In person", "summary": "Follow-up requested after the workshop.", "state": "waiting", "source": "Calendar note", "time": "4 days ago" }
+  ],
+  "qualityKpis": [
+    { "label": "verified", "value": 142, "detail": "current records" },
+    { "label": "unresolved", "value": 2, "detail": "identity review" },
+    { "label": "conflicts", "value": 1, "detail": "field comparison" },
+    { "label": "incidents", "value": 0, "detail": "open" }
+  ],
+  "reviews": [
+    { "title": "A. Morgan", "state": "ambiguous", "reason": "Two profiles share the same display name.", "source": "Imported interaction", "next": "Select the verified profile" },
+    { "title": "Community organiser", "state": "unresolved", "reason": "Message contains an organisation but no durable person identifier.", "source": "Event notes", "next": "Add an email or profile URL" }
+  ]
+}

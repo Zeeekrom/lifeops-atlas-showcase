@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Synthetic LifeOps Atlas product demo">
+    <title>LifeOps Atlas — Synthetic Demo</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23123b57'/%3E%3Cpath d='M17 47 29 16h7l12 31h-8l-2-7H27l-2 7Zm12-14h7l-3-10Z' fill='white'/%3E%3C/svg%3E">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#today" aria-label="LifeOps Atlas home">
+        <span class="brand-mark">A</span>
+        <span><strong>LifeOps Atlas</strong><small data-copy="subtitle">Synthetic engineering demo</small></span>
+      </a>
+      <div class="top-actions">
+        <span class="demo-pill" data-copy="synthetic">Synthetic data only</span>
+        <button id="language" class="ghost" type="button">中文</button>
+      </div>
+    </header>
+
+    <nav class="tabs" aria-label="Product areas">
+      <button class="tab active" data-view="today" data-copy="today">Today</button>
+      <button class="tab" data-view="radar" data-copy="radar">Radar</button>
+      <button class="tab" data-view="networking" data-copy="networking">Networking</button>
+      <button class="tab" data-view="quality" data-copy="quality">Data quality</button>
+    </nav>
+
+    <main>
+      <section class="view active" id="today" aria-labelledby="today-title">
+        <div class="page-heading">
+          <div><p class="eyebrow" data-copy="workspace">DAILY WORKSPACE</p><h1 id="today-title" data-copy="todayTitle">Decide what matters next</h1></div>
+          <span class="status"><i></i><span data-copy="healthy">Pipeline healthy</span></span>
+        </div>
+        <div class="kpi-grid" id="today-kpis"></div>
+        <div class="layout">
+          <article class="panel span-8">
+            <div class="panel-head"><div><h2 data-copy="agenda">Today & tomorrow</h2><p data-copy="agendaHint">Calendar-aware blocks in local time</p></div><span class="tag">12-hour</span></div>
+            <div class="agenda" id="agenda"></div>
+          </article>
+          <article class="panel span-4">
+            <div class="panel-head"><div><h2 data-copy="weather">Action weather</h2><p data-copy="weatherHint">Decision summary, not raw telemetry</p></div></div>
+            <div class="weather-card">
+              <div><span class="weather-icon">☀</span><strong>18°C</strong><small data-copy="weatherCondition">Clear · feels like 17°C</small></div>
+              <ul><li data-copy="weatherOne">Warmer than yesterday; light layer after 7 PM.</li><li data-copy="weatherTwo">UV reaches 5.8; sunscreen before 10:20 AM.</li><li data-copy="weatherThree">Low rain chance; umbrella not required.</li></ul>
+            </div>
+          </article>
+          <article class="panel span-12">
+            <div class="panel-head"><div><h2 data-copy="actions">Priority actions</h2><p data-copy="actionsHint">Audited tasks with explicit state</p></div><button class="ghost small" type="button" data-copy="add">+ Add</button></div>
+            <div class="table-wrap"><table><thead><tr><th data-copy="priority">Priority</th><th data-copy="item">Item</th><th data-copy="due">Due</th><th data-copy="state">State</th></tr></thead><tbody id="actions-table"></tbody></table></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="view" id="radar" aria-labelledby="radar-title">
+        <div class="page-heading"><div><p class="eyebrow" data-copy="radarEyebrow">AUDITABLE AUTOMATION</p><h1 id="radar-title" data-copy="radarTitle">Opportunity radar</h1></div><button class="primary" id="run-demo" type="button" data-copy="run">Run synthetic cycle</button></div>
+        <div class="kpi-grid" id="radar-kpis"></div>
+        <div class="module-grid" id="radar-modules"></div>
+        <article class="panel run-panel"><div class="panel-head"><div><h2 data-copy="coverage">Source coverage</h2><p data-copy="coverageHint">A report cannot claim complete coverage when a required source fails</p></div><span id="run-state" class="tag success" data-copy="complete">Complete</span></div><div class="coverage" id="coverage-list"></div></article>
+      </section>
+
+      <section class="view" id="networking" aria-labelledby="networking-title">
+        <div class="page-heading"><div><p class="eyebrow" data-copy="relationshipEyebrow">RELATIONSHIP MEMORY</p><h1 id="networking-title" data-copy="networkingTitle">People and conversations</h1></div></div>
+        <div class="kpi-grid" id="network-kpis"></div>
+        <div class="layout">
+          <article class="panel span-5"><div class="panel-head"><div><h2 data-copy="stages">Relationship stages</h2><p data-copy="stagesHint">Current state, not message volume</p></div></div><div id="stage-bars" class="bars"></div></article>
+          <article class="panel span-7"><div class="panel-head"><div><h2 data-copy="recent">Recent interactions</h2><p data-copy="recentHint">Click a row to inspect provenance</p></div></div><div class="table-wrap"><table><thead><tr><th data-copy="person">Person</th><th data-copy="channel">Channel</th><th data-copy="summary">Summary</th><th data-copy="state">State</th></tr></thead><tbody id="people-table"></tbody></table></div></article>
+        </div>
+      </section>
+
+      <section class="view" id="quality" aria-labelledby="quality-title">
+        <div class="page-heading"><div><p class="eyebrow" data-copy="qualityEyebrow">VISIBLE UNCERTAINTY</p><h1 id="quality-title" data-copy="qualityTitle">Data quality and conflicts</h1></div></div>
+        <div class="kpi-grid" id="quality-kpis"></div>
+        <div class="layout">
+          <article class="panel span-7"><div class="panel-head"><div><h2 data-copy="reviewQueue">Identity review queue</h2><p data-copy="reviewHint">Ambiguous records are never silently guessed</p></div></div><div id="review-list" class="review-list"></div></article>
+          <article class="panel span-5"><div class="panel-head"><div><h2 data-copy="trustOrder">Evidence trust order</h2><p data-copy="trustHint">Higher authority wins during reconciliation</p></div></div><ol class="trust-list"><li data-copy="trustOne">Explicit user correction</li><li data-copy="trustTwo">Verified current evidence</li><li data-copy="trustThree">Canonical confirmed state</li><li data-copy="trustFour">Imported source state</li><li data-copy="trustFive">Model inference</li></ol></article>
+        </div>
+      </section>
+    </main>
+
+    <dialog id="detail-dialog"><form method="dialog"><button class="dialog-close" aria-label="Close">×</button><p class="eyebrow" data-copy="provenance">PROVENANCE</p><h2 id="dialog-title"></h2><div id="dialog-body"></div><button class="primary dialog-done" data-copy="done">Done</button></form></dialog>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js" defer></script>
+  </body>
+</html>

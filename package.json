@@ -1,0 +1,15 @@
+{
+  "name": "lifeops-atlas-showcase",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Privacy-safe engineering showcase for LifeOps Atlas",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "validate:public": "node scripts/validate-public.mjs",
+    "test": "node --test test/*.test.mjs"
+  }
+}
