@@ -40,6 +40,7 @@ synthetic demo.
 - [Run the synthetic demo](#run-the-synthetic-demo)
 - [What is not finished](#what-is-not-finished)
 - [What the project showed](#what-the-project-showed)
+- [Poster](#poster)
 - [Public versus private](#public-versus-private)
 
 ## At a glance
@@ -297,6 +298,12 @@ product walkthrough rather than a copy of the private production interface.
 - Running beside the existing workflow is cheap insurance. Problems surfaced before they cost anything.
 - AI is most useful when its input is bounded and its output is structured and reviewable.
 - Recording failures honestly is what makes the reports trustworthy.
+
+## Poster
+
+<img src="media/poster.jpg" alt="Project poster" width="520">
+
+A one-page summary of the project, made in October 2026. The screens on it come from the synthetic demo, and the figures are the operating snapshot above.
 
 ## Public versus private
 
