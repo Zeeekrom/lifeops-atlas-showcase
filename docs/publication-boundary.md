@@ -10,6 +10,11 @@ codebase.
 - Clearly labelled synthetic records.
 - Public-safe validation and continuous integration.
 - Generic descriptions of adapters, reconciliation, scheduling and AI safety.
+- Selected, dated aggregate observations in `operating-snapshot.json`, under a
+  fixed numeric/date schema. They are historical acceptance evidence, not a
+  live data connection or production record export.
+- Capability limits for PWA, career-material preparation, application support,
+  read-only knowledge and evidence-linked AI relevance.
 
 ## Excluded
 
@@ -31,3 +36,16 @@ codebase.
    synchronisation.
 
 The validator is a guardrail, not a substitute for human review.
+
+## 29 Oct 2026 selection
+
+Generic architecture, stable records/corrections, bounded retrieval, private
+notification previews, manual material preparation and support-case practices
+are suitable for public evaluation. The snapshot contains counts only; source
+messages, source paths, personal experiences, resumes and operational evidence
+remain private. The existing poster is explicitly historical (8 Oct snapshot).
+
+Do not market private offline people reports as scraping, preparation as
+automatic applications, PWA as a native application, case management as full
+enterprise device management, or a calendar interval as uptime. LinkedIn
+access is manual-only throughout the implementation.

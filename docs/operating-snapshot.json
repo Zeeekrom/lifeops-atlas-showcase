@@ -1,0 +1,23 @@
+{
+  "schema": "lifeops-atlas.public-snapshot.v1",
+  "asOf": "2026-10-29",
+  "shadowStartedOn": "2026-09-16",
+  "elapsedCalendarDays": 43,
+  "continuousUptimeMeasured": false,
+  "knowledge": { "collections": 3, "documents": 160 },
+  "historyImport": {
+    "sourceRecords": 418,
+    "matchedExisting": 264,
+    "addedMessages": 153,
+    "archivedWithoutText": 1
+  },
+  "personalizationExample": { "recommendations": 3, "evidenceItems": 22 },
+  "verification": {
+    "suiteTotal": 295,
+    "suitePassed": 288,
+    "suiteSkipped": 7,
+    "suiteFailed": 0,
+    "isolatedPostgresPassed": 27,
+    "isolatedPostgresFailed": 0
+  }
+}

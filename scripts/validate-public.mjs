@@ -1,6 +1,7 @@
 import { readdir, readFile, stat } from "node:fs/promises";
 import { dirname, extname, join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
+import { validateSnapshot } from "./validate-snapshot.mjs";
 
 const root = dirname(dirname(fileURLToPath(import.meta.url)));
 const ignored = new Set([".git", ".playwright-cli", "node_modules"]);
@@ -38,12 +39,19 @@ for (const path of files) {
   for (const rule of blockedContent) if (rule.pattern.test(content)) failures.push(`${name}: ${rule.name}`);
 }
 
-for (const required of ["README.md", "README.zh-CN.md", "demo/index.html", "demo/data.json", "docs/publication-boundary.md"]) {
+for (const required of ["README.md", "README.zh-CN.md", "demo/index.html", "demo/data.json", "docs/publication-boundary.md", "docs/operating-snapshot.json", "docs/feature-map.md", "docs/verification.md"]) {
   if (!files.some((path) => relative(root, path).replaceAll("\\", "/") === required)) failures.push(`${required}: required file missing`);
 }
 
 const demo = JSON.parse(await readFile(join(root, "demo", "data.json"), "utf8"));
 if (demo.synthetic !== true) failures.push("demo/data.json: synthetic flag must be true");
+
+try {
+  const snapshot = JSON.parse(await readFile(join(root, "docs", "operating-snapshot.json"), "utf8"));
+  failures.push(...validateSnapshot(snapshot).map(error => `docs/operating-snapshot.json: ${error}`));
+} catch {
+  failures.push("docs/operating-snapshot.json: missing or invalid JSON");
+}
 
 if (failures.length) {
   console.error(`Public validation failed:\n- ${failures.join("\n- ")}`);
