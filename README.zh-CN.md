@@ -11,7 +11,7 @@
 
 ![合成数据 Demo 的今日页面](media/demo-today.png)
 
-**[打开合成数据演示](https://zeeekrom.github.io/lifeops-atlas-showcase/)**
+**[打开合成数据演示](https://zeeekrom.github.io/lifeops-atlas-showcase/)** · **[▶ 观看 64 秒短片](https://zeeekrom.github.io/lifeops-atlas-showcase/video/)**
 
 这里是经过筛选的作品集版本：静态演示、工程图和注明日期的汇总数字。
 不包含个人记录、生产提示词、账号标识和私有配置。所有产品截图均来自合成数据；
@@ -158,6 +158,13 @@ npm run dev
 - 不自动投递、联系他人、报名，也不做领英自动化。
 - 未完成企业端点全面部署、原生 Android 应用，以及把原始录音自动写成已认可个人成果的流程。
 - 未发布转化、录用或节省时间的结果；这里只证明运行规模和具体的验收记录。
+
+## 64 秒短片
+
+<a href="https://zeeekrom.github.io/lifeops-atlas-showcase/video/"><img src="media/film-preview.jpg" alt="播放 LifeOps Atlas 的 64 秒短片" width="640"></a>
+
+点击图片即可在浏览器里播放（64 秒，英文，有声音）。片中的界面来自合成数据演示，
+片尾的数字取自上面 2026 年 10 月 29 日的快照。
 
 ## 历史海报
 

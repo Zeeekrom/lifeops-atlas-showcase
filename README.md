@@ -12,7 +12,7 @@
 
 ![The Today view of the synthetic demo](media/demo-today.png)
 
-**[Open the synthetic demo](https://zeeekrom.github.io/lifeops-atlas-showcase/)**
+**[Open the synthetic demo](https://zeeekrom.github.io/lifeops-atlas-showcase/)** · **[▶ Watch the 64-second film](https://zeeekrom.github.io/lifeops-atlas-showcase/video/)**
 
 This is a deliberately sanitised portfolio edition: a static walkthrough,
 engineering diagrams and selected dated aggregates. It contains no personal
@@ -183,6 +183,14 @@ and no external account connection. It loads its synthetic data locally.
   automatic conversion of raw recordings into approved personal achievements.
 - No published conversion, employment or time-saving outcomes; the snapshot
   demonstrates operating scale and specific acceptance evidence only.
+
+## 64-second film
+
+<a href="https://zeeekrom.github.io/lifeops-atlas-showcase/video/"><img src="media/film-preview.jpg" alt="Play the 64-second LifeOps Atlas film" width="640"></a>
+
+Click the image to play the film in your browser (64 seconds, with sound).
+The screens are the synthetic demo; the figures near the end come from the
+29 Oct 2026 snapshot above.
 
 ## Historical poster
 
