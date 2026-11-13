@@ -2,6 +2,15 @@
 
 Prepared 13 November 2026. AI-assisted draft; legal and English review remain pending.
 
+Published with the owner's explicit approval on 13 November 2026. Bilingual
+terms and footer are live. The effective hostname-root policy is now served
+at https://zeeekrom.github.io/robots.txt from the separate minimal repository
+https://github.com/Zeeekrom/zeeekrom.github.io (reviewed release `b77a1c7`).
+It disallows the named AI crawlers only under `/lifeops-atlas-showcase/` and
+leaves ordinary search engines and other project paths allowed. No DNS or
+production data changes were made. Root policy tests run before deployment.
+The configuration candidates below remain templates rather than served files.
+
 - Project-original work: all rights reserved, with statutory exceptions and
   third-party licence rights preserved. See `LICENSE` and the bilingual `/terms/`.
 - Existing public main history had no open-source reuse grant at review.
