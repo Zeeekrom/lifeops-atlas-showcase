@@ -7,6 +7,8 @@
     <title>LifeOps Atlas — Synthetic Demo</title>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23123b57'/%3E%3Cpath d='M17 47 29 16h7l12 31h-8l-2-7H27l-2 7Zm12-14h7l-3-10Z' fill='white'/%3E%3C/svg%3E">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="legal.css">
+    <script src="legal.js" defer></script>
   </head>
   <body>
     <header class="topbar">
@@ -81,6 +83,7 @@
 
     <dialog id="detail-dialog"><form method="dialog"><button class="dialog-close" aria-label="Close">×</button><p class="eyebrow" data-copy="provenance">PROVENANCE</p><h2 id="dialog-title"></h2><div id="dialog-body"></div><button class="primary dialog-done" data-copy="done">Done</button></form></dialog>
     <div id="toast" role="status" aria-live="polite"></div>
+    <footer id="atlas-legal-footer" class="atlas-legal-footer"><a data-legal="terms" href="terms/"><span lang="en">© 2026 LifeOps Atlas. All rights reserved.</span><span lang="zh-CN">© 2026 LifeOps Atlas，保留所有权利</span></a><nav><a data-legal="terms" href="terms/"><span lang="en">Terms &amp; licences</span><span lang="zh-CN">条款与许可</span></a><a data-legal="privacy" href="terms/#privacy"><span lang="en">Privacy</span><span lang="zh-CN">隐私</span></a></nav></footer>
     <script src="app.js" defer></script>
   </body>
 </html>

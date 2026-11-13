@@ -1,0 +1,9 @@
+# For a dedicated hostname where the showcase is served at /.
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: CCBot
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: *
+Allow: /

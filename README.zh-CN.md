@@ -183,3 +183,6 @@ npm run dev
 自动校验辅助人工复核，不能声称自动识别所有可能的敏感文字。
 
 目前不授予复用许可；公开仅用于技术评审和作品集评估。
+
+
+© 2026 LifeOps Atlas，保留所有权利。参见 [LICENSE](LICENSE)、[条款与隐私](https://zeeekrom.github.io/lifeops-atlas-showcase/terms/?lang=zh)和[第三方声明](THIRD_PARTY_NOTICES.md)。法定例外、GitHub 平台权限及第三方许可继续适用。

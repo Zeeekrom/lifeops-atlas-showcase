@@ -214,3 +214,6 @@ possible sensitive string can be detected automatically.
 
 No reuse licence is currently granted. Public visibility supports technical
 review and portfolio evaluation.
+
+
+Copyright (c) 2026 LifeOps Atlas. All rights reserved. See [LICENSE](LICENSE), [terms and privacy](https://zeeekrom.github.io/lifeops-atlas-showcase/terms/), and [third-party notices](THIRD_PARTY_NOTICES.md). Statutory exceptions, GitHub platform permissions and third-party licences remain applicable.

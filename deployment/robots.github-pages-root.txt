@@ -1,0 +1,10 @@
+# Candidate for https://zeeekrom.github.io/robots.txt, NOT the project subdirectory.
+# Applies only to this showcase path. Deploy separately after approval.
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: CCBot
+User-agent: Google-Extended
+Disallow: /lifeops-atlas-showcase/
+
+User-agent: *
+Allow: /lifeops-atlas-showcase/

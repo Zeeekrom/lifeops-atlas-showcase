@@ -5,12 +5,13 @@ import { fileURLToPath } from "node:url";
 
 const root = fileURLToPath(new URL("../demo/", import.meta.url));
 const port = Number(process.env.PORT || 4173);
-const types = { ".html": "text/html; charset=utf-8", ".css": "text/css; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".json": "application/json; charset=utf-8" };
+const types = { ".html": "text/html; charset=utf-8", ".css": "text/css; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".json": "application/json; charset=utf-8", ".txt": "text/plain; charset=utf-8", ".mp4": "video/mp4", ".jpg": "image/jpeg" };
 
 createServer((request, response) => {
   const requested = decodeURIComponent(new URL(request.url || "/", `http://${request.headers.host}`).pathname);
   const relative = requested === "/" ? "index.html" : requested.slice(1);
-  const path = normalize(join(root, relative));
+  let path = normalize(join(root, relative));
+  if (existsSync(path) && statSync(path).isDirectory()) path = join(path, 'index.html');
   if (!path.startsWith(root) || !existsSync(path) || !statSync(path).isFile()) {
     response.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" });
     return response.end("Not found");

@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>LifeOps Atlas · 64-second film</title>
+<link rel="stylesheet" href="../legal.css">
+<script defer src="../legal.js"></script>
 <meta name="description" content="A 64-second film about LifeOps Atlas, shown on the synthetic demo. Your people, events and follow-ups, in one place.">
 <meta property="og:type" content="video.other">
 <meta property="og:title" content="LifeOps Atlas · 64-second film">
@@ -14,12 +16,14 @@
 <meta property="og:video:width" content="1920">
 <meta property="og:video:height" content="1080">
 <style>
-  html, body { margin: 0; height: 100%; background: #0b1a26; }
-  body { display: grid; place-items: center; }
-  video { width: 100vw; height: 100vh; max-height: 100vh; object-fit: contain; background: #0b1a26; display: block; }
+  html, body { margin: 0; min-height: 100%; background: #0b1a26; }
+  body { display: flex; flex-direction: column; }
+  video { width: 100%; height: calc(100dvh - 100px); object-fit: contain; background: #0b1a26; display: block; }
+  .atlas-legal-footer { width: 100%; color: #c7d9e4; border-color: #385360; }
 </style>
 </head>
 <body>
 <video src="lifeops-atlas-film.mp4" poster="poster.jpg" controls playsinline preload="metadata"></video>
+<footer id="atlas-legal-footer" class="atlas-legal-footer"><a data-legal="terms" href="../terms/"><span lang="en">© 2026 LifeOps Atlas. All rights reserved.</span><span lang="zh-CN">© 2026 LifeOps Atlas，保留所有权利</span></a><nav><a data-legal="terms" href="../terms/"><span lang="en">Terms &amp; licences</span><span lang="zh-CN">条款与许可</span></a><a data-legal="privacy" href="../terms/#privacy"><span lang="en">Privacy</span><span lang="zh-CN">隐私</span></a><button class="legal-language" id="legal-language" type="button">中文</button></nav></footer>
 </body>
 </html>

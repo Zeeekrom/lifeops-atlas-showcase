@@ -1,0 +1,3 @@
+# For a preview hostname; must be served at that hostname's /robots.txt.
+User-agent: *
+Disallow: /
