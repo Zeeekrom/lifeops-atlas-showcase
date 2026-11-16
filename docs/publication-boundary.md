@@ -43,7 +43,9 @@ Generic architecture, stable records/corrections, bounded retrieval, private
 notification previews, manual material preparation and support-case practices
 are suitable for public evaluation. The snapshot contains counts only; source
 messages, source paths, personal experiences, resumes and operational evidence
-remain private. The existing poster is explicitly historical (8 Oct snapshot).
+remain private. The poster was redrawn on 16 Nov 2026 from the synthetic demo
+screens and the dated test and snapshot figures; it publishes no personal record
+totals. The 8 Oct poster and its record counts remain only in Git history.
 
 Do not market private offline people reports as scraping, preparation as
 automatic applications, PWA as a native application, case management as full
