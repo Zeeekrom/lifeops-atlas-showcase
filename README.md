@@ -2,166 +2,245 @@
 
 <p align="right"><strong>English</strong> · <a href="README.zh-CN.md">简体中文</a></p>
 
-> A single-user operations system that brings tasks, relationships, event
-> research and career preparation into one evidence-backed workspace.
-> Durable records belong in PostgreSQL; AI works from bounded, traceable input.
+> A personal operations workspace with bounded AI agents: research signals,
+> explain records and prepare career drafts, while Atlas keeps the durable state.
 
 [![Public-safe validation](https://github.com/Zeeekrom/lifeops-atlas-showcase/actions/workflows/validate.yml/badge.svg)](https://github.com/Zeeekrom/lifeops-atlas-showcase/actions/workflows/validate.yml)
-![Production stack](https://img.shields.io/badge/production-TypeScript%20%2B%20Fastify%20%2B%20PostgreSQL-164e63)
-![Demo data](https://img.shields.io/badge/demo%20data-synthetic-0f766e)
 
-![The Today view of the synthetic demo](media/demo-today.png)
+<table>
+<tr>
+<td align="center" width="68%"><a href="https://zeeekrom.github.io/lifeops-atlas-showcase/video/"><img src="media/film-preview.jpg" alt="Watch the 64-second synthetic walkthrough" width="600"></a></td>
+<td align="center" width="32%"><a href="media/agent-workflow-poster.png"><img src="media/agent-workflow-poster.png" alt="LifeOps Atlas: bounded AI roles, application controls and human review" width="205"></a></td>
+</tr>
+<tr>
+<td align="center"><a href="https://zeeekrom.github.io/lifeops-atlas-showcase/video/">64-second film · synthetic screens · October snapshot</a></td>
+<td align="center"><a href="media/agent-workflow-poster.png">AI workflow poster · 16 Nov 2026</a></td>
+</tr>
+</table>
 
-**[Open the synthetic demo](https://zeeekrom.github.io/lifeops-atlas-showcase/)** · **[▶ Watch the 64-second film](https://zeeekrom.github.io/lifeops-atlas-showcase/video/)**
+**[Open the synthetic demo](https://zeeekrom.github.io/lifeops-atlas-showcase/)** ·
+**[Read the agent boundaries](docs/ai-agents.md)**
 
-This is a deliberately sanitised portfolio edition: a static walkthrough,
-engineering diagrams and selected dated aggregates. It contains no personal
-data, production prompts, account identifiers or private configuration.
-Every product screenshot comes from synthetic records. The production source
-and real records remain private.
+This is a sanitised portfolio edition of a private, single-user system.
+It presents synthetic screens, engineering decisions and dated acceptance evidence.
+Personal data, production prompts, resumes and account configuration stay private.
+The demo runs locally in the browser; it does not run the production agents.
+
+## Contents
+
+- [At a glance](#at-a-glance)
+- [The problem and who it is for](#the-problem-and-who-it-is-for)
+- [One follow-up, start to finish](#one-follow-up-start-to-finish)
+- [The screens](#the-screens)
+- [Where the AI agents fit](#where-the-ai-agents-fit)
+- [What works today](#what-works-today)
+- [Problems that became rules](#problems-that-became-rules)
+- [Architecture and data ownership](#architecture-and-data-ownership)
+- [Technology stack](#technology-stack)
+- [Verification evidence](#verification-evidence)
+- [Dated operating and verification snapshot](#dated-operating-and-verification-snapshot)
+- [Try the showcase](#try-the-showcase)
+- [What is not finished](#what-is-not-finished)
+- [Public versus private](#public-versus-private)
 
 ## At a glance
 
-| Area | Current scope |
+| | |
 | --- | --- |
-| Problem | Spreadsheet, calendar and chat outputs disagree; follow-ups lose their history and AI digests hide missing sources |
-| Approach | One canonical database, append-only corrections, source evidence and durable worker jobs |
-| Production stack | Node.js 24, TypeScript, Fastify 5, Zod, PostgreSQL 17 and Docker Compose |
-| Interface | Native HTML/CSS/JavaScript, bilingual dashboard, phone PWA and a focused Jobs entry sharing the same backend |
-| AI execution | Host-side workers with bounded snapshots, validated results and explicit provider failures |
-| Deployment scope | One local single-user shadow installation; not a multi-tenant SaaS or a claim of continuous uptime |
-| Public edition | Four synthetic screens plus architecture, capability boundaries and an aggregate acceptance snapshot |
+| What it is | One workspace for daily planning, relationship history, evidence-backed research, career preparation and application support |
+| Primary user | One person maintaining their own schedule, contacts, follow-ups and source material |
+| AI | A research-agent workflow, read-only answer workers and source-grounded drafting workers, coordinated through durable jobs |
+| What the application owns | Scheduling, record identity, import reconciliation, validation, audit history and delivery state |
+| Stack | TypeScript, Node.js 24, Fastify 5, Zod, PostgreSQL 17, Docker Compose, native web pages and a phone PWA |
+| Current AI execution | Official Codex CLI for chat and career text; OpenClaw remains for Radar research and Discord during migration |
+| Deployment | Local single-user installation; private phone access; public static showcase |
+| Status | Documentation reviewed 16 Nov 2026. Implemented functions and dated checks are distinguished from deferred work |
 
-## The system in blocks
+## The problem and who it is for
+
+A calendar records an appointment. A spreadsheet records a contact.
+A chat produces a useful answer. None of those alone preserves what happened,
+which source supports it, or what should happen next.
+
+LifeOps Atlas joins those pieces around a durable record. A follow-up keeps its
+identity when its reminder or status changes. A user correction survives the next
+import. A research report shows which sources were read and which remain missing.
+
+The working installation serves its owner. The public edition gives software,
+data and application-support reviewers a reproducible view of the design.
+Broader small-team use is a possible direction, not a validated deployment.
+
+## One follow-up, start to finish
+
+The example below is illustrative; it contains no private contact or message.
 
 ```mermaid
-flowchart TB
-    Atlas[LifeOps Atlas]
-    Atlas --> Daily[Daily operations]
-    Daily --> Tasks[Schedule / tasks / follow-up stages]
-    Daily --> Relationships[People / organisations / interactions]
-    Atlas --> Research[Research and AI]
-    Research --> Radar[Daily Radar / AI technology signals]
-    Research --> Knowledge[Allowlisted text / files / cited answers]
-    Atlas --> Preparation[Work preparation]
-    Preparation --> Career[JD / Summary copies / form prefill]
-    Preparation --> Support[Support cases / knowledge articles / Bug Log]
-    Atlas --> Operations[Operations]
-    Operations --> Reliability[Sync / audit / source coverage / retries]
-    Operations --> Mobile[PWA / private notifications / local control]
+flowchart LR
+    E["Confirmed interaction"] --> A["One Action and conversation"]
+    A --> Q["Saved job and bounded context"]
+    Q --> R["Research or answer worker"]
+    R --> V["Validate and retain evidence"]
+    V --> H["Owner reviews the result"]
+    H --> U["Update the same Action"]
+    U --> A
 ```
 
-[Feature map and boundaries](docs/feature-map.md) ·
-[Architecture](docs/architecture.md) ·
-[Engineering decisions](docs/engineering-decisions.md)
+1. **Record the real starting fact.** The owner records an outgoing email and
+   links it to a person and an Action.
+2. **Set the right checkpoint.** An email follow-up can use the configured
+   seven-calendar-day policy. Waiting on an unanswered LinkedIn message follows
+   a separate policy without an automatic overdue countdown.
+3. **Refresh the inputs.** One hourly coordinator reads permitted sources and
+   reconciles them. Ordinary synchronization does not call an AI model.
+4. **Run the appropriate worker.** A saved job supplies the relevant snapshot.
+   Research records source coverage; conversation answers use supplied Atlas evidence.
+5. **Keep the result checkable.** Validate the output and store the answer or
+   report, evidence and available execution statistics. A saved report and a
+   delivered notification have separate states.
+6. **Let the owner decide.** Chat returns an explanation or draft. The owner
+   edits the existing Action through the management screen and sends any message
+   or application themselves. Later stages reuse the same record and conversation.
 
-| Implemented in the private system | What it demonstrates | Practical limit |
+## The screens
+
+| | |
+| --- | --- |
+| ![Synthetic Today screen](media/demo-today.png) | ![Synthetic Radar screen](media/demo-radar.png) |
+| **Today:** schedule, Actions and weather | **Radar:** findings, source coverage and review state |
+| ![Synthetic Networking screen](media/demo-networking.png) | ![Synthetic data-quality screen](media/demo-quality.png) |
+| **Networking:** relationships and interaction history | **Data quality:** identity review and conflicting evidence |
+
+These four screens demonstrate selected patterns. They are synthetic fixtures,
+not screenshots of personal records or an implementation of every private feature.
+
+## Where the AI agents fit
+
+The AI layer combines a research-agent workflow with narrower answer and drafting
+workers. They share Atlas state and queues; each role has a different execution boundary.
+
+| Role | What it does | What controls the result |
 | --- | --- | --- |
-| Daily workspace and Action lifecycle | Stable IDs, archive/reopen, local-time checkpoints and correction replay | A stage needs a confirmed fact; a missing reply is not inferred from missing data |
-| Research Radar | Durable jobs, source audits, bounded retries and reports stored before delivery | A blocked or unsearched source stays partial/unknown |
-| AI technology Radar | Fixed API/feed sampling, immutable source snapshots and evidence-linked personal relevance | Not an exhaustive trending ranking; external news is not a user's skill or achievement |
-| Text knowledge and file analysis | Read-only manifests, content hashes, scoped retrieval and preserved originals | No automatic whole-disk ingestion; extraction can fail |
-| Seven assistant spaces | Persistent history, Action-linked conversations and explicit ChatGPT copy/paste handoff | Current chat is read-only; record changes use management screens |
-| Career-preparation pilot | JD capture, template-preserving Summary copies, document outputs and ordinary field prefill | Non-IT local pilot; final submission is manual |
-| Application support | Cases, priorities, service targets, evidence, knowledge articles and repair history | Not full enterprise endpoint management; second-device rollout remains unverified |
-| Phone access and notifications | PWA subscription, generic previews and private-network detail access | Not a native mobile app; the host still needs to run |
+| Research agent | Researches permitted public signals and prepares Radar sections with findings and source coverage | Durable jobs, required output contracts, identity reconciliation, bounded retries and explicit gaps |
+| Answer worker | Explains the supplied Atlas snapshot, conversation and retrieved excerpts | Read-only chat; model text cannot execute a record change |
+| Career drafting worker | Adapts a resume Summary and drafts ordinary application answers from supplied material | Source facts, Summary length checks, protected templates and separate application code |
+| Evidence readers | Refresh selected local text and connected sources | Read-only manifests or approved connector operations; a connection alone is not successful coverage |
+| Application coordinator | Schedules work, claims jobs, validates results and persists state | Deterministic application code, database constraints and audited management screens |
 
-All LinkedIn access is manual-only. Existing user-supplied/offline text can be
-analysed, but the project does not automatically visit, search or scrape that
-service. No account workaround is part of the design.
+**The 15 November migration is partial.** Chat and career text now use the official
+Codex CLI with the operator's ChatGPT subscription. Those calls use isolated
+temporary workspaces, restricted filesystem/network permissions, disabled command
+tools, web search, apps and plugins, and no paid-API or OpenClaw fallback.
+Radar inference and Discord delivery/history still depend on OpenClaw.
 
-## Dated operating and verification snapshot
+Career browser prefill is a separate program, not a browser controlled by the
+text model. Sensitive questions and final submission remain manual.
+The ChatGPT handoff is an explicit copy/paste bridge; it does not search the
+user's complete ChatGPT history.
 
-Selected observations from the private acceptance record dated **29 Oct 2026**.
-This public repository has **no live connection to the private production
-database**.
+[Agent roles, controls and acceptance](docs/ai-agents.md)
 
-<table>
-  <tr>
-    <td align="center"><strong>43 days</strong><br><sub>Elapsed since shadow comparison began</sub></td>
-    <td align="center"><strong>160</strong><br><sub>Allowlisted text documents indexed</sub></td>
-    <td align="center"><strong>3</strong><br><sub>Read-only text collections</sub></td>
-    <td align="center"><strong>418</strong><br><sub>Historical source records reconciled</sub></td>
-  </tr>
-  <tr>
-    <td align="center"><strong>288 / 295</strong><br><sub>Main-suite passes / total; 7 conditional skips</sub></td>
-    <td align="center"><strong>27 / 27</strong><br><sub>Isolated PostgreSQL acceptance tests passed</sub></td>
-    <td align="center"><strong>3</strong><br><sub>Recommendations in one acceptance example</sub></td>
-    <td align="center"><strong>22</strong><br><sub>Frozen evidence items in that example</sub></td>
-  </tr>
-</table>
+## What works today
 
-- The 43-day interval is 16 Sep–29 Oct 2026: calendar age, **not measured uptime,
-  active-use hours or a service-availability percentage**.
-- The history import matched 264 source records to existing reports, added
-  153 messages and retained one record without importable text. Replaying it
-  does not duplicate the same records. These are import counts, not sent messages.
-- The 27 real-database tests were run separately against an isolated test
-  database. Seven conditional skips in the main suite are not counted as passes.
-- The recommendation example records its input evidence. It is not a daily
-  output rate, a claim of personal achievement or a measured career outcome.
+| Workspace | Implemented work | Current boundary |
+| --- | --- | --- |
+| Today and follow-up | Agenda, local events, countdown policies, stable Actions, archive/reopen and reused conversations | Synced Calendar events are read-only; dates require a confirmed starting fact |
+| Networking | People, organisations, interactions and identity review | LinkedIn is manual-only across all automation |
+| Radar and AI technology | Source sampling, research jobs, reports, frozen evidence and personal relevance | Partial coverage stays partial; news is not personal experience |
+| Knowledge and corpus | Allowlisted text ingestion, hashed sources, cited answers, draft review and protected writeback | Original attribution remains; raw material is not automatically an approved personal claim |
+| Career preparation | Non-IT local SEEK pilot, saved JD, Summary copies, DOCX/PDF output and ordinary field prefill | Source templates stay unchanged; the user submits |
+| IT Support and operations | Cases, service targets, assets, evidence, articles, Bug Log, PWA and generic notification previews | Second-device endpoint acceptance is deferred; the host must remain available |
 
-[Machine-readable aggregate snapshot](docs/operating-snapshot.json) ·
-[Definitions and verification limits](docs/verification.md)
+[Full feature map](docs/feature-map.md) · [Engineering decisions](docs/engineering-decisions.md)
 
-The earlier business-record totals are not relabelled as current. The poster
-below retains its original October snapshot and is historical material.
+## Problems that became rules
+
+| Failure or friction encountered | The resulting design |
+| --- | --- |
+| A later import could undo a manual correction | Keep source versions and explicit corrections separately; replay higher-authority corrections |
+| Reopening the same Action could scatter its history across conversations | Reuse a stable Action-linked thread across status changes |
+| A queued Radar job could look as though it was running | Separate queue, worker claim, report persistence and delivery; expose failures and retries |
+| Model-generated change proposals were not a reliable editing surface | Retire executable chat cards; use validated management forms |
+| A push preview could reveal private content before the phone connected privately | Send fixed generic preview text; load details inside Atlas |
+| A provider or executable version could become unavailable | Preserve the saved request, classify the failure and make fallback policy explicit |
 
 ## Architecture and data ownership
 
 ```mermaid
 flowchart TD
-    UI[Browser / phone PWA / Jobs entry] --> Access[Private HTTPS access]
-    Access --> API[Fastify API + native web pages]
-    API <--> DB[(PostgreSQL canonical state)]
-    Sources[Read-only sources / allowlisted local text] --> API
-    UI --> Changes[Validated user edits]
-    Changes --> Ledger[Append-only correction ledger]
-    Ledger --> DB
-    Workers[Host-side AI and application workers] <--> API
-    API --> Files[Original-file archive / local material copies]
-    DB --> Reports[Persisted reports and delivery state]
-    Reports --> Push[Generic notification preview]
+    UI["Browser / phone PWA / Jobs entry"] --> API["Fastify application"]
+    API <--> DB[("PostgreSQL canonical records")]
+    Sources["Read-only sources and allowlisted text"] --> API
+    API --> Queue["Durable jobs and bounded snapshots"]
+    Queue --> Text["Codex: answers and career drafts"]
+    Queue --> Radar["OpenClaw: research during migration"]
+    Queue --> Career["Career Ops browser / document adapter"]
+    Text --> Check["Output and evidence validation"]
+    Radar --> Check
+    Career --> Check
+    Check --> DB
+    UI --> Edits["Owner's validated record edits"]
+    Edits --> DB
+    DB --> Delivery["Saved reports and delivery state"]
+    Delivery --> Notify["Generic push preview / configured Discord delivery"]
 ```
 
-The application and database are two containers. AI workers, browser prefill
-and the local bootstrap controller run on the host. A stopped main application
-is recovered through that separate controller. The phone, Jobs entry and main
-dashboard share state; they do not maintain competing databases.
+The application and PostgreSQL run in two containers. Host workers and the
+loopback bootstrap controller are separate processes. The phone, Jobs entry and
+main dashboard use the same backend. Tailscale is optional for local use and
+required for the configured private remote access.
 
-Imported rows are source evidence. A confirmed user correction is stored
-separately and replayed after later imports. Deleted calendar events retain
-tombstones. Follow-up stages keep the same Action identity instead of deleting
-and recreating work. The text index currently uses PostgreSQL chunks and
-lexical ranking, without a separate vector database.
+Imported rows remain source evidence. Corrections, archive markers and Calendar
+tombstones preserve confirmed user intent. Retrieval uses PostgreSQL text chunks
+and lexical ranking; a separate vector database or embedding pipeline is not
+part of the current implementation.
 
-## Where AI participates
+## Technology stack
 
-AI helps with Radar analysis, cited conversation answers, bounded relevance
-recommendations and tailored Summary drafts. Scheduling, ordinary sync,
-deduplication, state transitions and dashboard figures are deterministic code.
-
-A model answer cannot claim an external action happened or overwrite a record.
-Chat is currently read-only. Manual management screens use the audited record
-managers. The ChatGPT handoff copies context for the user to paste and send;
-returned text remains external evidence.
-
-Source gaps, provider failures, missing evidence and failed text extraction
-stay visible. Notification previews carry generic copy rather than names,
-task text, counts or report details. Opening details needs private access.
-
-## Synthetic walkthrough
-
-| | |
+| Layer | Technologies and purpose |
 | --- | --- |
-| ![Today](media/demo-today.png) | ![Radar](media/demo-radar.png) |
-| Today: schedule, actions and weather | Radar: synthetic findings and source coverage |
-| ![Networking](media/demo-networking.png) | ![Data quality](media/demo-quality.png) |
-| Networking: relationship stages and provenance | Data quality: identity review and evidence authority |
+| API and contracts | TypeScript, Node.js 24, Fastify 5, Zod |
+| Durable data and retrieval | PostgreSQL 17, constraints, source hashes, text chunks and lexical ranking |
+| Interface | Native HTML/CSS/JavaScript, English/Chinese UI, PWA, Web Push |
+| AI execution | Official Codex CLI for text; OpenClaw for the remaining research/delivery path |
+| Career documents and browser | Selected Career Ops modules, Chromium automation and Python document handling |
+| Local operations | Docker Compose, host workers, loopback recovery controller and optional private networking |
+| Verification | Automated tests, isolated PostgreSQL checks, public-data validation and recorded acceptance |
 
-The four screens illustrate selected patterns. They do not implement every
-private capability listed above. Displayed names, jobs and numbers in the
-demo are synthetic and separate from the dated aggregate snapshot.
+## Verification evidence
+
+| Dated check | Result and what it establishes |
+| --- | --- |
+| 15 Nov 2026: text migration | A real chat traversed the API, worker and database; its saved answer and execution receipt identified Codex |
+| 15 Nov 2026: text boundaries | A synthetic adversarial request did not disclose an outside-workspace canary, perform the requested action or visit a URL; no tool event occurred |
+| 15 Nov 2026: career generation | The actual Summary generator produced a source-grounded synthetic draft without editing a source resume or submitting an application |
+| 15 Nov 2026: automated checks | The full-suite run recorded 342 passes and 18 conditional skips out of 360; five isolated PostgreSQL usage/read-only-chat checks also passed, reported separately |
+
+These are specific acceptance observations, not a comprehensive security audit
+or a promise of future uptime. Token receipts retain actual executor counters;
+account quota and unavailable context capacity remain unknown.
+[Verification definitions](docs/verification.md)
+
+## Dated operating and verification snapshot
+
+The older operating baseline remains **29 Oct 2026**. This repository has
+**no live connection to the private production database**.
+
+<table>
+<tr>
+<td align="center"><strong>160</strong><br><sub>Allowlisted text documents</sub></td>
+<td align="center"><strong>418</strong><br><sub>Historical source records reconciled</sub></td>
+<td align="center"><strong>288 / 295</strong><br><sub>Main-suite passes / total; 7 skips</sub></td>
+<td align="center"><strong>27 / 27</strong><br><sub>Separate PostgreSQL checks passed</sub></td>
+</tr>
+</table>
+
+The source snapshot also records three collections, 43 elapsed calendar days
+since shadow comparison began, and one recommendation example with three outputs
+from 22 evidence items. Calendar age is not measured uptime; import counts are
+not sent messages, and recommendation counts are not career outcomes.
+[Machine-readable baseline](docs/operating-snapshot.json)
+
+## Try the showcase
 
 ```bash
 npm run validate:public
@@ -169,51 +248,34 @@ npm test
 npm run dev
 ```
 
-Open <http://127.0.0.1:4173>. The static walkthrough has no production backend
-and no external account connection. It loads its synthetic data locally.
+Open <http://127.0.0.1:4173>. The static demo uses local synthetic data and has no
+production backend or account connection.
 
-## Current limits
+The film retains its October screens and figures. The new poster illustrates
+the architecture reviewed on 16 November; it does not publish record totals.
+The [8 October poster](media/poster.jpg) remains an explicitly historical asset.
 
-- Single-user, host-dependent shadow deployment; no multi-tenant access model
-  or cloud availability claim.
-- Read-only source access does not prove each run read every connected source.
-  Source checks are bounded and can remain partial.
-- No automatic applications, outreach, registrations or LinkedIn automation.
-- No completed enterprise endpoint rollout, native Android application or
-  automatic conversion of raw recordings into approved personal achievements.
-- No published conversion, employment or time-saving outcomes; the snapshot
-  demonstrates operating scale and specific acceptance evidence only.
+## What is not finished
 
-## 64-second film
-
-<a href="https://zeeekrom.github.io/lifeops-atlas-showcase/video/"><img src="media/film-preview.jpg" alt="Play the 64-second LifeOps Atlas film" width="640"></a>
-
-Click the image to play the film in your browser (64 seconds, with sound).
-The screens are the synthetic demo; the figures near the end come from the
-29 Oct 2026 snapshot above.
-
-## Historical poster
-
-<img src="media/poster.jpg" alt="Historical project poster with synthetic screenshots" width="520">
-
-The poster uses the **8 Oct 2026** operating snapshot. Its counts and earlier
-feature descriptions are historical; the current capability table and dated
-snapshot above take precedence.
+- Migrate the remaining research and Discord dependencies before retiring OpenClaw.
+- Decide and validate AWS/Azure deployment; the operational installation is still local.
+- Complete second-device endpoint acceptance when that work resumes.
+- Finish authenticated real-form acceptance for the career pilot; submission stays manual.
+- Establish broader user validation and measured outcomes before claiming wider readiness.
 
 ## Public versus private
 
-This repository **does not share Git history** with the private implementation.
-It is not an automatic mirror. Generic design descriptions, selected numeric
-aggregates and synthetic examples are reviewed independently before publication.
-Personal records, resumes, communications, source paths, production prompts,
-account identifiers and runtime material stay excluded.
+This repository does not share Git history with the private implementation.
+It contains reviewed explanations, synthetic examples and selected aggregates.
+Personal records, communications, resumes, source paths, credentials, production
+prompts and runtime logs remain excluded.
 
-[Publication boundary](docs/publication-boundary.md) defines the release check.
-Public validation supplements human review; it is not a proof that every
-possible sensitive string can be detected automatically.
+The demo, film and old poster have their own dated scope. No deployment,
+employment result, productivity gain or complete source coverage is inferred
+from their existence.
+[Publication boundary](docs/publication-boundary.md)
 
-No reuse licence is currently granted. Public visibility supports technical
-review and portfolio evaluation.
-
-
-Copyright (c) 2026 LifeOps Atlas. All rights reserved. See [LICENSE](LICENSE), [terms and privacy](https://zeeekrom.github.io/lifeops-atlas-showcase/terms/), and [third-party notices](THIRD_PARTY_NOTICES.md). Statutory exceptions, GitHub platform permissions and third-party licences remain applicable.
+Copyright (c) 2026 LifeOps Atlas. All rights reserved.
+See [LICENSE](LICENSE), [terms and privacy](https://zeeekrom.github.io/lifeops-atlas-showcase/terms/)
+and [third-party notices](THIRD_PARTY_NOTICES.md).
+Statutory exceptions, GitHub platform permissions and third-party licences remain applicable.

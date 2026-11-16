@@ -39,3 +39,23 @@ stay labelled as historical acceptance evidence.
 160 是选定文本的索引规模；418 是历史来源记录对账规模。
 295 项主测试中 7 项条件跳过，不能计为通过；27 项真实数据库测试是另一组独立验收。
 这次发布不重新运行模型或操作生产数据，也不据此推断录用、业务转化或节省时间的结果。
+
+## 15 November text-worker acceptance
+
+A later, separate acceptance record verifies direct Codex chat queue completion,
+answer/usage persistence, synthetic Summary generation and the bounded canary
+check. The full-suite run recorded 342 passes and 18 conditional skips out of
+360; five isolated PostgreSQL usage/read-only-chat checks also passed. These
+runs are reported separately, with no claim that their cases are all disjoint.
+Follow-up targeted checks covered executable selection and the final text policy.
+
+The October operating snapshot above was not re-dated or refreshed. No new
+private-model run or production-data query was needed for this README update.
+See [AI-agent acceptance and limits](ai-agents.md#acceptance-observations).
+
+### 中文补充
+
+11 月 15 日另一次文字执行器验收确认 Codex 消息队列、回答和用量落库、合成
+Summary 及受限测试。完整测试当次为 360 项，342 项通过、18 项条件跳过；
+隔离 PostgreSQL 另有 5 项通过。两组分别统计，不声称所有用例互不重复。
+本次文档更新没有把十月基线改成新日期，也没有重新调用私人模型任务或查询生产数据。
