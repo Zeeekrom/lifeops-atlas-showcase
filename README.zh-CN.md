@@ -318,4 +318,4 @@ npm run dev
 
 ## 版权与条款
 
-© 2026 LifeOps Atlas，保留所有权利，见 [LICENSE](LICENSE)。本仓库里的文字、图片、短片、海报和文档，以及项目自己的代码和设计，未经书面许可不得转载、复制或改编。欢迎分享链接。法律允许的例外、GitHub 平台本身的权限和第三方许可仍然适用，见[第三方声明](THIRD_PARTY_NOTICES.md)。条款、许可与隐私见[条款页](https://zeeekrom.github.io/lifeops-atlas-showcase/terms/?lang=zh)。
+© 2026 LifeOps Atlas，保留所有权利，见 [LICENSE](LICENSE)。未经书面许可，不得复制、转载或改编本仓库的任何内容，也不得用手工、自动化工具或 AI 克隆工具重建项目的代码和设计；除法律允许的情形外，不得对代码进行逆向工程；不得抓取、批量下载这些内容，或把它们用于训练、评测 AI 模型。法律本身允许的使用（如为评论、新闻报道合理引用）不受影响。欢迎分享链接。法律允许的例外、GitHub 平台本身的权限和第三方许可仍然适用，见[第三方声明](THIRD_PARTY_NOTICES.md)。条款、许可与隐私见[条款页](https://zeeekrom.github.io/lifeops-atlas-showcase/terms/?lang=zh)。
