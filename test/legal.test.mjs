@@ -7,7 +7,9 @@ const read = name => readFile(new URL('../' + name, import.meta.url), 'utf8');
 test('every public entry links bilingual copyright and terms, including the film', async () => {
   for (const name of ['demo/index.html', 'demo/video/index.html', 'demo/terms/index.html']) {
     const html = await read(name);
-    assert.match(html, /id="atlas-legal-footer"/); assert.match(html, /保留所有权利/); assert.match(html, /All rights reserved/);
+    assert.match(html, /id="atlas-legal-footer"/); assert.match(html, /All rights reserved/);
+    // The film page footer is English only, like every other project's video page (owner's instruction, 17 Nov 2026).
+    if (name !== 'demo/video/index.html') assert.match(html, /保留所有权利/);
     assert.match(html, /legal\.js/); assert.match(html, /legal\.css/);
   }
   const terms = await read('demo/terms/index.html');

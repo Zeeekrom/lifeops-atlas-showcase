@@ -4,7 +4,9 @@
   Never copy private production records, prompts, account identifiers or logs.
 - Project-original work is all rights reserved. Retain third-party licences
   and respect statutory exceptions and GitHub's platform permissions.
-- Keep terms, privacy facts and copyright footers in English and Chinese.
+- Keep terms, privacy facts and copyright footers in English and Chinese. The
+  exception is the film page footer (`demo/video/`), which is English only like
+  every other project's video page (owner's instruction, 17 November 2026).
   Legal drafts remain marked AI-assisted and not lawyer-reviewed until reviewed.
 - Changes under `demo/**` pushed to `main` automatically deploy Pages. Obtain
   the owner's approval for the concrete release before pushing or deploying.
