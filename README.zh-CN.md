@@ -26,6 +26,15 @@ LifeOps Atlas 把一个人的日程、联系人、跟进事项、机会和研究
 
 <table>
 <tr>
+<td><a href="https://lifeops.evanh.dev/zh/walkthrough/"><img src="media/walkthrough.zh.jpg" alt="播放《一次真实运行，逐行讲解》：1 分 28 秒的讲解动画，求职材料流水线的一次真实运行和决定每一步的代码" width="520"></a></td>
+</tr>
+<tr>
+<td align="center"><a href="https://lifeops.evanh.dev/zh/walkthrough/">讲解动画：一次真实运行，逐行讲解，1 分 28 秒</a></td>
+</tr>
+</table>
+
+<table>
+<tr>
 <td><a href="https://lifeops.evanh.dev/zh/"><img src="media/explorer-replay.zh.jpg" alt="Run Explorer 回放：求职材料流水线的两次真实运行录制，所有人可看" width="416"></a></td>
 </tr>
 <tr>
@@ -38,6 +47,10 @@ LifeOps Atlas 把一个人的日程、联系人、跟进事项、机会和研究
 
 **短片：**[观看 64 秒短片](https://zeeekrom.github.io/lifeops-atlas-showcase/video/)
 ——合成数据页面的导览。短片录于 2026 年 10 月，里面的页面和数字都是当时的。
+
+**讲解动画：**[一次真实运行，逐行讲解](https://lifeops.evanh.dev/zh/walkthrough/)（[English](https://lifeops.evanh.dev/walkthrough/)）
+——1 分 28 秒：求职材料流水线真实跑的一次，2026 年 11 月 21 日录制，每一步配上当时决定它的代码。
+画面上的每个数字都来自运行记录。英文旁白（合成语音），中英字幕。
 
 **互动演示：**[Run Explorer 运行回放](https://lifeops.evanh.dev/zh/)（[English](https://lifeops.evanh.dev/)）
 ——求职材料流水线的每一步：它处理了什么数据，以及当时运行的私有实现代码片段（提交 `6bd7f5c`）。

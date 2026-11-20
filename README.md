@@ -26,6 +26,15 @@ The application source, real records, prompts and configuration live in a privat
 
 <table>
 <tr>
+<td><a href="https://lifeops.evanh.dev/walkthrough/"><img src="media/walkthrough.jpg" alt="Play One real run, line by line: a 1:28 narrated walkthrough of one real run of the career-materials pipeline and the code that decided each step" width="520"></a></td>
+</tr>
+<tr>
+<td align="center"><a href="https://lifeops.evanh.dev/walkthrough/">Walkthrough: one real run, line by line, 1:28</a></td>
+</tr>
+</table>
+
+<table>
+<tr>
 <td><a href="https://lifeops.evanh.dev/"><img src="media/explorer-replay.jpg" alt="Run Explorer, replay: two recorded real runs of the career-materials pipeline, open to all" width="416"></a></td>
 </tr>
 <tr>
@@ -40,6 +49,10 @@ no account and no AI call.
 **Short film:** [watch the 64-second film](https://zeeekrom.github.io/lifeops-atlas-showcase/video/)
 — a walkthrough of the synthetic screens. It was recorded in October 2026, so its screens and figures date from
 then.
+
+**Walkthrough:** [One real run, line by line](https://lifeops.evanh.dev/walkthrough/) ([中文](https://lifeops.evanh.dev/zh/walkthrough/))
+— 1:28: one real run of the career-materials pipeline, recorded on 21 November 2026, with the code that decided each step.
+Every number on screen comes from the run records. English narration (synthetic voice), English and Chinese subtitles.
 
 **Interactive demo:** [Run Explorer](https://lifeops.evanh.dev/) ([中文](https://lifeops.evanh.dev/zh/))
 — each step of the career-materials pipeline, with the data it handled and excerpts of the private implementation's code (commit `6bd7f5c`) that ran.

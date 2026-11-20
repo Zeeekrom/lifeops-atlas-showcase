@@ -15,8 +15,9 @@ codebase.
   live data connection or production record export.
 - Capability limits for PWA, career-material preparation, application support,
   read-only knowledge and evidence-linked AI relevance.
-- Links and README cards (`media/explorer-replay*.jpg`) for the Run Explorer at
-  <https://lifeops.evanh.dev>, which is hosted separately from this repository.
+- Links and README cards (`media/explorer-replay*.jpg`, `media/walkthrough*.jpg`)
+  for the Run Explorer and its narrated walkthrough at <https://lifeops.evanh.dev>,
+  which are hosted separately from this repository.
 
 ## The Run Explorer exception (approved 21 Nov 2026)
 
@@ -25,7 +26,8 @@ view. The Run Explorer replays recorded real runs of the career-materials
 pipeline only, on a fictional candidate, employer and form. For that pipeline
 it shows the functions each step ran and the prompts they built, as excerpts
 pinned to one commit of the private implementation; other files are listed by
-name only. Nothing else in the exclusions below changes: no personal records,
+name only. The narrated walkthrough on the same site shows excerpts from the
+same commit and nothing more. Nothing else in the exclusions below changes: no personal records,
 no other prompts or orchestration, and no private Git history. The four-screen
 demo in this repository is labelled as sample data with preset responses.
 
