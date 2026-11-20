@@ -24,13 +24,27 @@ The application source, real records, prompts and configuration live in a privat
 </tr>
 </table>
 
-**Synthetic demo:** [open the four-screen demo](https://zeeekrom.github.io/lifeops-atlas-showcase/)
+<table>
+<tr>
+<td><a href="https://lifeops.evanh.dev/"><img src="media/explorer-replay.jpg" alt="Run Explorer, replay: two recorded real runs of the career-materials pipeline, open to all" width="416"></a></td>
+</tr>
+<tr>
+<td align="center"><a href="https://lifeops.evanh.dev/">Replay: two recorded real runs, open to all</a></td>
+</tr>
+</table>
+
+**Synthetic demo (sample data, preset responses):** [open the four-screen demo](https://zeeekrom.github.io/lifeops-atlas-showcase/)
 — Today, Radar, Networking and Data quality, filled with made-up records. It runs in the browser with no backend,
 no account and no AI call.
 
 **Short film:** [watch the 64-second film](https://zeeekrom.github.io/lifeops-atlas-showcase/video/)
 — a walkthrough of the synthetic screens. It was recorded in October 2026, so its screens and figures date from
 then.
+
+**Interactive demo:** [Run Explorer](https://lifeops.evanh.dev/) ([中文](https://lifeops.evanh.dev/zh/))
+— each step of the career-materials pipeline, with the data it handled and excerpts of the private implementation's code (commit `6bd7f5c`) that ran.
+The replay shows two runs recorded on 21 November 2026, each with two real calls to gpt-5.6-sol through the official Codex CLI, and calls no model itself.
+The candidate, employer and application form are fictional.
 
 <img src="media/demo-radar.png" alt="The synthetic Radar screen with findings, source checks, blocked duplicates and items waiting for review" width="640">
 
@@ -69,7 +83,7 @@ The synthetic Radar screen. A research run shows what it found, how many duplica
 | Stack | TypeScript, Node.js 24, Fastify 5, Zod, PostgreSQL 17, Docker Compose, native HTML/CSS/JavaScript and a phone PWA |
 | Evidence | 342 passes and 18 conditional skips in a 360-test run, a restricted-AI canary check with no tool event, and an end-to-end chat through the queue (15 Nov 2026); 418 historical records reconciled and 27 of 27 isolated PostgreSQL checks (29 Oct 2026) |
 | Data | Real records stay in the private installation. This repository holds synthetic screens, a synthetic demo and a fixed-format file of dated counts |
-| Status | One local installation used by its owner; shadow comparison began on 16 Sep 2026. Not a multi-user product and not deployed to the cloud |
+| Status | One local installation used by its owner; shadow comparison began on 16 Sep 2026. Not a multi-user product and not deployed to the cloud. An [interactive demo](https://lifeops.evanh.dev/) (Nov 2026) replays real runs of the career pipeline on fictional data |
 
 ## The problem
 
@@ -223,6 +237,7 @@ The synthetic values show how the screens work. They say nothing about the owner
 | 7 Nov 2026 | 64-second film of the synthetic demo |
 | 13 Nov 2026 | Copyright terms, privacy notes and crawler rules for the public site, in English and Chinese |
 | 15 Nov 2026 | Chat and career text moved to the official Codex CLI in an isolated text-only mode; 342 of 360 tests passing, 18 skipped |
+| 21 Nov 2026 | Interactive demo, the Run Explorer, published at lifeops.evanh.dev: two recorded real runs of the career-materials pipeline on a fictional candidate, each step linked to the code that ran |
 
 The two dated acceptance records, 29 Oct and 15 Nov, are described in [verification definitions](docs/verification.md).
 
@@ -286,6 +301,8 @@ npm run dev
 
 Open <http://127.0.0.1:4173>. The static demo uses local synthetic data and has no production backend or account connection.
 
+To watch the career pipeline at work without running anything, open the [Run Explorer](https://lifeops.evanh.dev/).
+
 ## Security and data boundary
 
 - The public demo has no backend, credentials or AI calls. It cannot reach the private installation.
@@ -315,6 +332,8 @@ Open <http://127.0.0.1:4173>. The static demo uses local synthetic data and has 
 ## Public versus private
 
 This repository does not share Git history with the private implementation. It contains reviewed explanations, synthetic examples and selected dated counts. Personal records, communications, resumes, source paths, credentials, production prompts and runtime logs stay out.
+
+The [Run Explorer](https://lifeops.evanh.dev/) is the one place where implementation code is shown: for the career-materials pipeline only, it shows the functions each step ran and the prompts they built, as excerpts pinned to one commit of the private implementation, run on fictional data. The rest of the source stays private.
 
 The demo, the film and the poster each carry their own date and scope. Nothing about deployment, job results, time saved or complete source coverage should be read into them. [Publication boundary](docs/publication-boundary.md)
 

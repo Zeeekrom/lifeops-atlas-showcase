@@ -1,6 +1,6 @@
 const copy = {
   en: {
-    subtitle: "Synthetic engineering demo", synthetic: "Synthetic data only", today: "Today", radar: "Radar", networking: "Networking", quality: "Data quality",
+    subtitle: "Synthetic engineering demo", synthetic: "Sample data · preset responses", today: "Today", radar: "Radar", networking: "Networking", quality: "Data quality",
     workspace: "DAILY WORKSPACE", todayTitle: "Decide what matters next", healthy: "Pipeline healthy", agenda: "Today & tomorrow", agendaHint: "Calendar-aware blocks in local time",
     weather: "Action weather", weatherHint: "Decision summary, not raw telemetry", weatherCondition: "Clear · feels like 17°C", weatherOne: "Warmer than yesterday; light layer after 7 PM.", weatherTwo: "UV reaches 5.8; sunscreen before 10:20 AM.", weatherThree: "Low rain chance; umbrella not required.",
     actions: "Priority actions", actionsHint: "Audited tasks with explicit state", add: "+ Add", priority: "Priority", item: "Item", due: "Due", state: "State",
@@ -10,7 +10,7 @@ const copy = {
     provenance: "PROVENANCE", done: "Done", events: "Events", openActions: "Open actions", waitingReplies: "Waiting replies", newSignals: "New signals", discoveries: "Discoveries", sourcesChecked: "Sources checked", duplicatesBlocked: "Duplicates blocked", needsReview: "Needs review", people: "People", activeConversations: "Active conversations", followUps: "Follow-ups", reviewQueueKpi: "Review queue", verified: "Verified", unresolved: "Unresolved", conflicts: "Conflicts", incidents: "Incidents", syntheticRun: "Synthetic cycle completed — no external action was performed.", syntheticAdd: "Demo only: a production create flow would write an audited command."
   },
   zh: {
-    subtitle: "合成数据工程演示", synthetic: "仅使用合成数据", today: "今日", radar: "雷达", networking: "人脉", quality: "数据质量",
+    subtitle: "合成数据工程演示", synthetic: "示例数据、预设回答", today: "今日", radar: "雷达", networking: "人脉", quality: "数据质量",
     workspace: "每日工作台", todayTitle: "决定下一步最重要的事", healthy: "核心链路正常", agenda: "今日与明日", agendaHint: "按本地时间显示日历区块",
     weather: "行动天气", weatherHint: "只显示行动建议，不堆原始指标", weatherCondition: "晴 · 体感 17°C", weatherOne: "比昨天暖；晚上 7 点后带一件薄外套。", weatherTwo: "最高 UV 5.8；上午 10:20 前涂防晒。", weatherThree: "降雨概率低，不需要特意带伞。",
     actions: "优先行动", actionsHint: "带审计记录的明确任务状态", add: "+ 新增", priority: "优先级", item: "事项", due: "截止", state: "状态",

@@ -24,11 +24,25 @@ LifeOps Atlas 把一个人的日程、联系人、跟进事项、机会和研究
 </tr>
 </table>
 
-**合成数据演示：**[打开四个页面的演示](https://zeeekrom.github.io/lifeops-atlas-showcase/)
+<table>
+<tr>
+<td><a href="https://lifeops.evanh.dev/zh/"><img src="media/explorer-replay.zh.jpg" alt="Run Explorer 回放：求职材料流水线的两次真实运行录制，所有人可看" width="416"></a></td>
+</tr>
+<tr>
+<td align="center"><a href="https://lifeops.evanh.dev/zh/">回放：两次真实运行的录制，所有人可看</a></td>
+</tr>
+</table>
+
+**合成数据演示（示例数据、预设回答）：**[打开四个页面的演示](https://zeeekrom.github.io/lifeops-atlas-showcase/)
 ——今日、雷达、人脉和数据质量，里面全是编出来的记录。它在浏览器里运行，没有后台、没有账号，也不调用 AI。
 
 **短片：**[观看 64 秒短片](https://zeeekrom.github.io/lifeops-atlas-showcase/video/)
 ——合成数据页面的导览。短片录于 2026 年 10 月，里面的页面和数字都是当时的。
+
+**互动演示：**[Run Explorer 运行回放](https://lifeops.evanh.dev/zh/)（[English](https://lifeops.evanh.dev/)）
+——求职材料流水线的每一步：它处理了什么数据，以及当时运行的私有实现代码片段（提交 `6bd7f5c`）。
+回放里是 2026 年 11 月 21 日录下的两次运行，每次都通过官方 Codex CLI 真实调用了两次 gpt-5.6-sol；页面本身不调用模型。
+候选人、雇主和申请表都是虚构的。
 
 <img src="media/demo-radar.png" alt="合成数据的雷达页面：发现、来源检查、拦下的重复项和待复核事项" width="640">
 
@@ -67,7 +81,7 @@ LifeOps Atlas 把一个人的日程、联系人、跟进事项、机会和研究
 | 技术栈 | TypeScript、Node.js 24、Fastify 5、Zod、PostgreSQL 17、Docker Compose、原生 HTML/CSS/JavaScript 和手机 PWA |
 | 证据 | 2026 年 11 月 15 日：360 项测试中 342 项通过、18 项条件跳过；受限 AI 的诱饵测试没有发生任何工具调用；一次真实聊天完整走通队列。2026 年 10 月 29 日：418 条历史记录完成对账，27 项隔离 PostgreSQL 检查全部通过 |
 | 数据 | 真实记录只在私有实例里。本仓库只有合成数据截图、合成数据演示，以及一份格式固定、注明日期的计数文件 |
-| 状态 | 本机一套实例，由使用者自己在用；影子对比从 2026 年 9 月 16 日开始。不是多用户产品，也没有部署到云上 |
+| 状态 | 本机一套实例，由使用者自己在用；影子对比从 2026 年 9 月 16 日开始。不是多用户产品，也没有部署到云上。[互动演示](https://lifeops.evanh.dev/zh/)（2026 年 11 月）用虚构数据回放求职流水线的真实运行 |
 
 ## 要解决的问题
 
@@ -221,6 +235,7 @@ flowchart TD
 | 2026 年 11 月 7 日 | 合成数据演示的 64 秒短片 |
 | 2026 年 11 月 13 日 | 公开网站加上中英两版的版权条款、隐私说明和爬虫规则 |
 | 2026 年 11 月 15 日 | 聊天和求职文字改用官方 Codex CLI，以隔离的纯文字模式运行；360 项测试中 342 项通过、18 项跳过 |
+| 2026 年 11 月 21 日 | 互动演示 Run Explorer 在 lifeops.evanh.dev 上线：求职材料流水线在虚构候选人上的两次真实运行录制，每一步都链接到当时运行的代码 |
 
 10 月 29 日和 11 月 15 日两次验收记录的说明见[验证定义](docs/verification.md)。
 
@@ -284,6 +299,8 @@ npm run dev
 
 打开 <http://127.0.0.1:4173>。静态演示只用本地合成数据，没有生产后台，也不连接任何账号。
 
+不想运行也能看求职流水线怎么工作：打开 [Run Explorer 运行回放](https://lifeops.evanh.dev/zh/)。
+
 ## 安全与数据边界
 
 - 公开演示没有后台、没有凭据，也不调用 AI，连不到私有实例。
@@ -313,6 +330,8 @@ npm run dev
 ## 公开版与私有版边界
 
 本仓库与私有实现**没有共享 Git 历史**，只放审核过的说明、合成示例和选定的注明日期计数。个人记录、通信内容、简历、来源路径、凭据、生产提示词和运行日志都不会放进来。
+
+唯一展示实现代码的地方是 [Run Explorer 运行回放](https://lifeops.evanh.dev/zh/)：只针对求职材料这一条流水线，显示每一步运行的函数和它们拼出的提示词，以片段形式固定在私有实现的某一个提交上，运行用的是虚构数据。其余源码仍然是私有的。
 
 演示、短片和海报各有自己的日期和范围，不能据此推断云端部署、录用结果、节省的时间或完整的来源覆盖。[公开边界说明](docs/publication-boundary.md)
 
