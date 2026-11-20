@@ -36,8 +36,9 @@ sequenceDiagram
 ```
 
 As reviewed on 16 November 2026, chat and Career text use the official Codex
-CLI with isolated, tool-restricted text settings. The research Radar and
-Discord path still use OpenClaw. These are different execution boundaries;
+CLI with isolated, tool-restricted text settings. Since 20 November, Discord
+delivery calls the Discord API directly; the research Radar and commands sent
+to the bot in Discord still use OpenClaw. These are different execution boundaries;
 see [AI roles and migration status](ai-agents.md).
 
 ## Core components

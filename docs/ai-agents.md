@@ -11,12 +11,12 @@ every timer, connector or model call into an autonomous decision-maker.
 
 | Component | AI involvement | Input and output | Execution boundary |
 | --- | --- | --- | --- |
-| Daily Radar research | Research and reasoning workflow | Bounded Atlas state, permitted-source evidence; structured report, discoveries and source coverage | OpenClaw remains on this path during migration; Atlas validates and persists its results |
+| Daily Radar research | Research and reasoning workflow | Bounded Atlas state, permitted-source evidence; structured report, discoveries and source coverage | OpenClaw remains on the research path during migration; since 20 Nov 2026 the personalisation step uses the Codex adapter; Atlas validates and persists the results |
 | Conversation answers | Text inference | Supplied record snapshot, recent conversation and retrieved text; read-only answer | Official Codex CLI with isolated text-task settings |
 | Career text | Text inference | Supplied resume, JD and applicable writing constraints; Summary or ordinary answer draft | Same restricted Codex adapter; source/template checks remain in application code |
 | Source refresh | No model for the ordinary refresh | Read-only source results and allowlisted text | Deterministic coordinator and source-specific readers |
 | Browser prefill | Application automation, distinct from the text model | Prepared ordinary field answers and generated resume copy | Separate Career Ops adapter; sensitive fields and final submission remain manual |
-| Delivery | No model needed to send an already saved report | Persisted report and configured destination | Separate delivery state; Discord still uses OpenClaw on the current installation |
+| Delivery | No model needed to send an already saved report | Persisted report and configured destination | Separate delivery state; since 20 Nov 2026 Discord messages go directly through the Discord API, with OpenClaw kept only as a rollback switch |
 
 ## What changed on 15 November
 
@@ -84,8 +84,9 @@ unknown. Telemetry capture does not require an extra inference call.
 
 ## Migration still to do
 
-Radar research/personalisation, remaining evidence paths and Discord
-sending/history still require migration and end-to-end acceptance. Only then
+Radar personalisation and Discord sending and history import moved on
+20 Nov 2026. Radar research, the remaining evidence paths and commands sent to
+the bot in Discord still require migration and end-to-end acceptance. Only then
 can the corresponding OpenClaw gateway, startup entries and unused access be
 retired. The static public demo has neither these credentials nor a connection
 to the private installation.
@@ -97,11 +98,13 @@ LinkedIn is manual-only across the whole project, whether signed in or anonymous
 AI 层分为研究智能体流程和更窄的文字执行器。调度器、来源读取器和数据库校验
 仍是普通程序，不会因为用了模型就被称为自主智能体。
 
-- **研究雷达：** 仍使用 OpenClaw，返回结构化报告、发现与来源覆盖，Atlas 负责校验保存。
+- **研究雷达：** 研究仍使用 OpenClaw，返回结构化报告、发现与来源覆盖，Atlas 负责校验保存；
+  个性化一步从 11 月 20 日起改走 Codex。
 - **聊天回答：** 已直连官方 Codex，读取传入的快照和文本，聊天保持只读。
 - **求职文字：** 同样走受限 Codex，改写 Summary 或草拟普通答案；模板、事实检查、
   网页预填和最终提交边界由独立程序控制。
 - **普通同步和配送：** 无需模型推理；是否读到来源、是否保存报告、是否送达分别记录。
+  Discord 发送从 11 月 20 日起直连 Discord API，OpenClaw 只留作回滚开关。
 
 11 月 15 日的迁移使用已有 ChatGPT 登录，调用前检查认证方式，排除 API key 环境变量。
 每次调用使用临时工作区、受限文件／网络权限，关闭命令工具、网页搜索、应用、
@@ -113,7 +116,7 @@ AI 层分为研究智能体流程和更窄的文字执行器。调度器、来�
 完整测试当次记录 342 项通过、18 项条件跳过，共 360 项；另一组隔离数据库检查
 5 项通过。条件跳过不算通过，这些数字不是实时测试总数。
 
-剩余的研究、相关证据链和 Discord 依赖还需迁移验收，再考虑停用 OpenClaw。
+剩余的研究、相关证据链和在 Discord 里发给机器人的指令还需迁移验收，再考虑停用 OpenClaw。
 公开演示不持有这些凭据，也不连接私有实例。所有自动化入口继续禁止访问领英。
 
 [Back to English README](../README.md#where-the-ai-agents-fit) ·

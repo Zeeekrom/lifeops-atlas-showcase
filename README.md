@@ -92,7 +92,7 @@ The synthetic Radar screen. A research run shows what it found, how many duplica
 | What it is | A personal operations system: schedule, follow-ups, relationships, research and career preparation in one database, with AI workers that read and draft but do not decide |
 | Who it is for | One person who runs their own pipeline of contacts, events, opportunities and applications. This public edition is for software, data and application-support reviewers |
 | The problem | A calendar, a spreadsheet and a chat window each hold part of the story. None of them keeps what happened, which source says so, or what should happen next, and an AI summary of them cannot be checked |
-| AI | An evening research run that reports findings with the sources it read; read-only answers from the records; and career drafts grounded in the owner's own material. Since 15 Nov 2026, chat and career text run on the official Codex CLI in an isolated text-only mode. Research and Discord delivery still run on OpenClaw while that move finishes |
+| AI | An evening research run that reports findings with the sources it read; read-only answers from the records; and career drafts grounded in the owner's own material. Since 15 Nov 2026, chat and career text run on the official Codex CLI in an isolated text-only mode. Since 20 Nov, the Radar's personalisation step runs there too and Discord delivery calls the Discord API directly. Research still runs on OpenClaw while that move finishes |
 | Stack | TypeScript, Node.js 24, Fastify 5, Zod, PostgreSQL 17, Docker Compose, native HTML/CSS/JavaScript and a phone PWA |
 | Evidence | 342 passes and 18 conditional skips in a 360-test run, a restricted-AI canary check with no tool event, and an end-to-end chat through the queue (15 Nov 2026); 418 historical records reconciled and 27 of 27 isolated PostgreSQL checks (29 Oct 2026) |
 | Data | Real records stay in the private installation. This repository holds synthetic screens, a synthetic demo and a fixed-format file of dated counts |
@@ -190,7 +190,7 @@ flowchart TD
     Delivery --> Notify[Generic phone notification or Discord]
 ```
 
-**The 15 November move is partial.** Chat and career text now call the official Codex CLI with the owner's existing ChatGPT sign-in. Each call runs in a fresh temporary folder with restricted file and network access, and with command tools, web search, apps and plugins switched off. If it fails, it does not fall back to a paid API or to OpenClaw. Radar research and Discord delivery still depend on OpenClaw.
+**The 15 November move is partial.** Chat and career text now call the official Codex CLI with the owner's existing ChatGPT sign-in. Each call runs in a fresh temporary folder with restricted file and network access, and with command tools, web search, apps and plugins switched off. If it fails, it does not fall back to a paid API or to OpenClaw. Since 20 November, Discord delivery and history import call the Discord API directly with the existing bot, and the Radar's personalisation step uses the same Codex adapter. Radar research and commands sent to the bot in Discord still depend on OpenClaw.
 
 Form prefill for applications is a separate program, not a browser driven by the text model. Sensitive questions and the final submission stay manual. Handing context to ChatGPT is an explicit copy and paste; it does not search the owner's ChatGPT history.
 
@@ -250,6 +250,7 @@ The synthetic values show how the screens work. They say nothing about the owner
 | 7 Nov 2026 | 64-second film of the synthetic demo |
 | 13 Nov 2026 | Copyright terms, privacy notes and crawler rules for the public site, in English and Chinese |
 | 15 Nov 2026 | Chat and career text moved to the official Codex CLI in an isolated text-only mode; 342 of 360 tests passing, 18 skipped |
+| 20 Nov 2026 | Discord delivery and history import moved off OpenClaw to the Discord API directly; the Radar's personalisation step moved to the Codex adapter |
 | 21 Nov 2026 | Interactive demo, the Run Explorer, published at lifeops.evanh.dev: two recorded real runs of the career-materials pipeline on a fictional candidate, each step linked to the code that ran |
 
 The two dated acceptance records, 29 Oct and 15 Nov, are described in [verification definitions](docs/verification.md).
@@ -270,7 +271,7 @@ The two dated acceptance records, 29 Oct and 15 Nov, are described in [verificat
 - TypeScript, Node.js 24, Fastify 5 and Zod contracts
 - PostgreSQL 17 with constraints, source hashes, text chunks and lexical ranking (no separate vector database)
 - Native HTML, CSS and JavaScript; English and Chinese interface; phone PWA with Web Push
-- Official Codex CLI for text; OpenClaw for the remaining research and delivery path
+- Official Codex CLI for text; the Discord API directly for delivery; OpenClaw for the remaining research path
 - Selected Career Ops modules, Chromium automation and Python document handling for the career pilot
 - Docker Compose, host workers, a loopback-only recovery controller and optional private networking (Tailscale)
 - Automated tests, isolated PostgreSQL checks, public-data validation and dated acceptance records
@@ -328,7 +329,7 @@ To watch the career pipeline at work without running anything, open the [Run Exp
 
 ## What is not finished
 
-- Move the remaining research and Discord paths off OpenClaw, then retire it.
+- Move Radar research and the remaining Discord commands off OpenClaw, then retire it.
 - Decide on and test a cloud deployment (AWS or Azure); the working installation is still local.
 - Finish acceptance on a second device when that work resumes.
 - Finish signed-in acceptance on real application forms for the career pilot; submission stays manual.
