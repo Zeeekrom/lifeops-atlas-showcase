@@ -57,7 +57,8 @@ The example is illustrative and contains no private contact or message.
 - **A correction survives the next import.** Imported rows are evidence, not truth; the owner's corrections are stored apart and win.
 - **A failure leaves a request, not lost work.** The job is saved before the model is called; a failed call is classified and reported, never silently switched to another provider.
 - **A missing source stays missing.** A report cannot claim complete coverage when a required source failed.
-- **Nothing private leaks out.** Phone notifications carry fixed generic text, and nothing automated touches LinkedIn.
+- **Real data is kept local.** Real records are stored on the owner's own computer, not in a cloud database, and open on the phone only over a private network; a model call receives only the records its task needs, and everything public here is synthetic. Notifications carry fixed generic text, nothing automated touches LinkedIn, and public material is run through an automatic check for private information and secrets.
+- **Automation runs on rules and leaves a record.** The evening research run starts on its own schedule, and follow-up dates and reminders come from fixed rules, but nothing goes to another person unless the owner sends it. Each run records which sources it read, what failed and whether its report was delivered.
 
 ## The screens
 
