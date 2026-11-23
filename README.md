@@ -22,7 +22,7 @@ A personal operations system: one checked record of contacts, follow-ups and opp
 - **Real model calls, restricted and receipted.** Each run makes two calls to gpt-5.6-sol through the official Codex CLI, with tools, network and web search off and a JSON schema on the reply; token counts are the CLI's own receipts. → [replay, step 4](https://lifeops.evanh.dev/?run=run-1&step=4)
 - **The screens, with made-up records.** Today, Radar, Networking and Data quality run in the browser on sample data with preset responses: no backend, no account, no AI call. → [synthetic demo](https://zeeekrom.github.io/lifeops-atlas-showcase/)
 
-Showcase only: synthetic data, source private. Source code and a code walk-through are available on request via [LinkedIn](https://www.linkedin.com/in/evan-h-165976301/). → [Public versus private](#public-versus-private) · [Copyright and terms](#copyright-and-terms)
+Showcase only: synthetic data, source private. Source code and a code walk-through are available on request: [message me on LinkedIn](https://www.linkedin.com/in/evan-h-165976301/) or email [yuxianghuang2026@gmail.com](mailto:yuxianghuang2026@gmail.com). → [Public versus private](#public-versus-private) · [Copyright and terms](#copyright-and-terms)
 
 ## The problem
 
@@ -78,7 +78,7 @@ From the synthetic demo: selected patterns, not screenshots of personal records.
 
 ## Want the details?
 
-The source, a code walk-through on a call, the architecture, the decision records, the tests and the prompts aren't published here; they're available on request. [Message me on LinkedIn](https://www.linkedin.com/in/evan-h-165976301/).
+The source, a code walk-through on a call, the architecture, the decision records, the tests and the prompts aren't published here; they're available on request: [message me on LinkedIn](https://www.linkedin.com/in/evan-h-165976301/) or email [yuxianghuang2026@gmail.com](mailto:yuxianghuang2026@gmail.com).
 
 ## Public versus private
 

@@ -22,7 +22,7 @@
 - **真实调用模型，有限制也有回执。** 每次运行通过官方 Codex CLI 调用两次 gpt-5.6-sol，关掉工具、网络和网页搜索，回复必须符合 JSON 结构；token 数是 CLI 自己的回执。→ [回放第 4 步](https://lifeops.evanh.dev/zh/?run=run-1&step=4)
 - **四个页面，全是编出来的记录。** 今日、雷达、人脉和数据质量在浏览器里运行，用示例数据和预设回答：没有后台、没有账号，也不调用 AI。→ [合成数据演示](https://zeeekrom.github.io/lifeops-atlas-showcase/)
 
-展示版：示例数据，源码不公开。源码和代码导览可约看，请通过[领英](https://www.linkedin.com/in/evan-h-165976301/)联系。→ [公开版与私有版边界](#公开版与私有版边界) · [版权与条款](#版权与条款)
+展示版：示例数据，源码不公开。源码和代码导览可约看：[领英私信我](https://www.linkedin.com/in/evan-h-165976301/)，或发邮件到 [yuxianghuang2026@gmail.com](mailto:yuxianghuang2026@gmail.com)。→ [公开版与私有版边界](#公开版与私有版边界) · [版权与条款](#版权与条款)
 
 ## 要解决的问题
 
@@ -78,7 +78,7 @@ LifeOps Atlas 用同一个数据库回答这些问题，并把每条信息的来
 
 ## 想看更多
 
-源码、通话里的代码导览、架构、决策记录、测试和提示词都不在这里公开，可以约看。[请在领英私信我](https://www.linkedin.com/in/evan-h-165976301/)。
+源码、通话里的代码导览、架构、决策记录、测试和提示词都不在这里公开，可以约看：[领英私信我](https://www.linkedin.com/in/evan-h-165976301/)，或发邮件到 [yuxianghuang2026@gmail.com](mailto:yuxianghuang2026@gmail.com)。
 
 ## 公开版与私有版边界
 

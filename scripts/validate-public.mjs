@@ -29,6 +29,9 @@ async function filesAt(directory) {
   return results;
 }
 
+const PUBLIC_CONTACT = "yuxianghuang2026" + "@gmail.com";
+const PUBLIC_CONTACT_FILES = new Set(["README.md", "README.zh-CN.md"]);
+
 const files = await filesAt(root);
 const failures = [];
 for (const path of files) {
@@ -36,7 +39,10 @@ for (const path of files) {
   if (name !== ".gitignore" && blockedNames.some((pattern) => pattern.test(name))) failures.push(`${name}: blocked filename`);
   if (!textExtensions.has(extname(path))) continue;
   const content = await readFile(path, "utf8");
-  for (const rule of blockedContent) if (rule.pattern.test(content)) failures.push(`${name}: ${rule.name}`);
+  // The owner chose to publish one contact address in the READMEs (2026-11-23); every other personal
+  // address, and this one anywhere else, still fails.
+  const checked = PUBLIC_CONTACT_FILES.has(name) ? content.replaceAll(PUBLIC_CONTACT, "") : content;
+  for (const rule of blockedContent) if (rule.pattern.test(checked)) failures.push(`${name}: ${rule.name}`);
 }
 
 for (const required of ["README.md", "README.zh-CN.md", "demo/index.html", "demo/data.json", "docs/publication-boundary.md", "docs/operating-snapshot.json"]) {
